@@ -1,27 +1,24 @@
-# Meteo
+Exercice du jour : Application météo très basique
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.1.
+Nous voulons une application d'une seule page qui présente un formulaire simple :
 
-## Development server
+- Un champ pour écrire le nom d'une ville
+- Un bouton pour soumettre
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Lorsqu'on soumet, on va faire une requête http vers http://api.openweathermap.org/data/2.5/weather?q=LA_VILLE&appid=8e602b9ea28ed4f9f8fc97a5f6d1105c&units=metric
 
-## Code scaffolding
+Evidemment vous remplacerez a chaque fois LA_VILLE dans l'adresse par la ville qui a été tapée dans le formulaire.
+La requête HTTP devrait renvoyer une réponse en JSON : c'est un objet qui contient beaucoup d'infos et notamment une propriété "main" qui contient une propriété "temp" qui donne la température
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Si vous voulez faire un test, ouvrez ça avec votre navigateur ou dans postman : http://api.openweathermap.org/data/2.5/weather?q=marseille&appid=8e602b9ea28ed4f9f8fc97a5f6d1105c&units=metric (là c'est les données pour Marseille)
 
-## Build
+Affichez la température que l'API répond pour une ville :)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Vous aurez donc besoin de :
 
-## Running unit tests
+- Une nouvelle application Angular (meteo)
+- Un seul composant (le AppComponent suffira pour ça)
+- Un service WeatherService qui sera chargé de faire la requête Http
+- Vous devrez importer dans le AppModule les modules nécessaires (on fera un formulaire réactif et il y aura des requêtes HTTP, ça vous donne une idée sur les modules à importer ?)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Allez y tranquille !
